@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="15.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.inventarioejercicio2.Controller">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+    <children>
+        <HBox spacing="15.0">
+            <children>
+                <VBox prefWidth="180.0" spacing="5.0">
+                    <children>
+                        <Label text="Inventario Inicial:" />
+                        <TextField fx:id="txtInicial" promptText="ej. 50" />
+                        <Label text="Punto Reorden:" />
+                        <TextField fx:id="txtReorden" promptText="ej. 15" />
+                    </children>
+                </VBox>
+                <VBox prefWidth="180.0" spacing="5.0">
+                    <children>
+                        <Label text="Cantidad Pedido:" />
+                        <TextField fx:id="txtPedido" promptText="ej. 30" />
+                        <Label text="Días Simulación:" />
+                        <TextField fx:id="txtDias" promptText="ej. 30" />
+                    </children>
+                </VBox>
+                <VBox prefWidth="120.0" alignment="CENTER">
+                    <children>
+                        <Button onAction="#onSimularButtonClick" prefHeight="50.0" prefWidth="110.0" text="Simular" />
+                    </children>
+                </VBox>
+                <TextArea fx:id="txtResultados" editable="false" prefHeight="90.0" prefWidth="320.0" wrapText="true" />
+            </children>
+        </HBox>
+        <LineChart fx:id="chartInventario" prefHeight="400.0" title="Evolución del Stock en el Tiempo">
+            <xAxis>
+                <CategoryAxis label="Día" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Unidades Disponibles" />
+            </yAxis>
+        </LineChart>
+    </children>
+</VBox>
